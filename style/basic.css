@@ -1,0 +1,55 @@
+body{
+    font-family:verdana, arial, sans-serif;
+    font-size: 1em;
+}
+
+#output, #results, .weather{
+    padding:5px;
+}
+
+#googleMap{
+    margin-left:34%;
+}
+
+.clouds{
+    color:black;
+    background:url("clouds.jpg");
+}
+
+.sunny{
+    background:url("sunny.jpg");
+}
+
+.rainy{
+    background:url("rainy.jpg");
+}
+
+.verycloudy{
+    background:url("verycloudy.jpg");
+    color:white;
+}
+
+table{
+    width:440px;
+}
+
+.weather{
+    border: solid 2px black;
+    width: 15%;
+    margin-left:2.5%;
+    float:left;    
+    width:250px;
+}
+
+.weather img{
+    margin-top:2.5%;
+    margin-left:33%;
+}
+
+.date{
+    font-weight:bold;
+}
+
+.current{
+    font-style: italic;
+}
