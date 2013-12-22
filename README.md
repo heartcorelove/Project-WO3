@@ -8,6 +8,9 @@ You'll need the file GetWeather.js in the folder lib.
 Add to your code the following line between the HEAD tags:
 
 - < script src="../lib/GetWeather.js" type="text/javascript" >< /script >
+- < script type="text/javascript" >
+     getLocation();
+  < /script >
 
 Just remove the spaces for it to work.
 
@@ -34,4 +37,39 @@ To make the html file a little less blank but a bit more fancy depending on the 
 
 Show location on Google Maps
 ============================
+A complete toturial on how to use Google Maps can be found through here: http://www.w3schools.com/googleAPI/
+A global introduction on how placing a map with the right value is below.
 
+The first thing you'll have to do to make it work is adding one line of code between the HEAD tags.
+- < script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false" >< /script>
+
+again remove the spaces to make it work.
+
+All we used a map where we declared where the center (the users location) is, what type the map should be (Roadmap in our application) and how big the zoom is (10 in the example).
+
+You can declare this by using the following code:
+- var mapProp = {
+                center:new google.maps.LatLng(lat,long),
+                zoom:10,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+
+again longitude and latitude is being received by the JSON file from above!
+
+The main line of code we use to show the map is the following:
+- var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
+HTML File basic needs
+=====================
+All you need to put in the BODY tags of the HTML file are the following to make it work.
+- < input type="button" value="Switch to other standards" id="switch">
+- < div id="output">Idle...< /div>
+- < div id="results">< /div>
+- < div id="googleMap" style="width:500px;height:380px;">< /div>
+
+Just remind to remove the spaces to make it work
+The button is so you can change standards. If you only want the European standards you can leave this out.
+The first div with ID output is mainly to inform the user how far the application is with gathering the information.
+The second div with ID results is to put in all the weather application code that gets generated.
+The last div with ID googleMap is just to give the GoogleMaps application somewhere to put it.
