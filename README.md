@@ -21,7 +21,16 @@ These coordinates we get from the JSON request will be send through using a Ajax
 To use this we also need a proxy that will helps us get the xml file we need. We use this proxy: http://howestproxy.appspot.com/proxer?xml=
 After xml= comes the url you're sending a request to.
 
-If the file can't be pulled into our application an error will be show, saying to try again. (Might just take to much time, by trying again you'll know if it'll work or not. 99% of time you'll get back an xml file!).
+If the file can't be pulled into our application an error will be show, saying to try again. (Might just take too much time, by trying again you'll know if it'll work or not. 99% of time you'll get back an xml file!).
+
+If it's a succes to retrieve a proper XML file you'll be heading into the next function which will do the most work, getting the information you need.
+The first thing it does is giving EuropeanValues the value true.
+After that a list get pulled of all the weather objects in the xml file.
+
+Than for each object in the list certain items will be pulled out of the list and be putted in the html (main) file.
+Depending on weither the EuropeanValues is True or False Degrees in Celsius or Fahrenheit will be pulled out of the list and added to the html file.
+
+To make the html file a little less blank but a bit more fancy depending on the current weather code (which can be found in the xml file) the background will change, from normal weather to sunny, cloudy or very cloudy. The pictures for this background can be found under the folder "style".
 
 Show location on Google Maps
 ============================
