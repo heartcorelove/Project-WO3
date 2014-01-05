@@ -16,25 +16,27 @@ GetWeather.js: necessary javascript tags
 You'll need the file GetWeather.js in the folder lib.
 Add the html below to the page where you want to insert the weather app, you can choose to either put it between the head tags or at the bottom before the closing body tag:
 
-  <script src="lib/jquery-1.10.2.min.js"></script>
-  <script src="lib/GetWeather.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js?key=INSERTYOURKEYHERE&sensor=false"></script>
-  <script type="text/javascript">$(document).ready(getLocation);</script>
+  < script src="lib/jquery-1.10.2.min.js"></script>
+  < script src="lib/GetWeather.js"></script>
+  < script src="http://maps.googleapis.com/maps/api/js?key=INSERTYOURKEYHERE&sensor=false"></script>
+  < script type="text/javascript">$(document).ready(start);</script>
   
 Note that the first script tag loads the minified jquery file, you can of course use a CDN instead.
 The second script tag is the script itself.
 The third script tag is to ensure the script can gather data from google maps.  You'll notice that the url for this bit: 'INSERTYOURKEYHERE'.  The idea is that you replace this with your key for the google maps api.  Obtaining one is a simple process that is expertly documented at this link: https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+
 The fourth and last script tag is a method call that will add the app to your page, providing you have added the appropriate containers for it in the html (read below).  You can of course opt to call the getLocation() once a specific event occurs rather then when the DOM finishes loading, in which case you'll need to modify the method call.
 
 A full example is available in the /example folder.
+Note that you need to get rid of the spaces after the opening braces for the code to work.
 
 GetWeather.js. necessary HTML tags
 ==================================
 You will need to insert the following code snippet to make it work
-  <input type="button" value="Switch to other standards" id="switch">
-  <div id="output">Idle...</div>
-  <div id="results"></div>
-  <div id="googleMap" style="width:500px;height:380px;"></div>
+  < input type="button" value="Switch to other standards" id="switch">
+  < div id="output">Idle...</div>
+  < div id="results"></div>
+  < div id="googleMap" style="width:500px;height:380px;"></div>
 
 The first line is a button which enables users to switch between European and American standards.  For more on these read below.
 The first div with ID output is mainly to give some feedback to the user as the weather app is loading.
@@ -47,9 +49,9 @@ Important: notice that there's a style attribute added to the last div tag, you 
 jQweather.js: necessary js tags
 ===============================
 You will need to insert the following code snippet either between the head tags or just before the closing body tag.
-    <script src="lib/jquery-1.10.2.min.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
-    <script src="lib/jQweather.js"></script>
+    < script src="lib/jquery-1.10.2.min.js"></script>
+    < script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+    < script src="lib/jQweather.js"></script>
 
 Note that the first script tag loads the minified jquery file, you can of course use a CDN instead.
 The second script tag is to ensure the script can gather data from google maps.  You'll notice that the url for this bit: 'INSERTYOURKEYHERE'.  The idea is that you replace this with your key for the google maps api.  Obtaining one is a simple process that is expertly documented at this link: https://developers.google.com/maps/documentation/javascript/tutorial#api_key
@@ -63,10 +65,10 @@ jQweather.js. necessary HTML tags
 Important: the jquery plugin version doen't need you to strictly adhere to the below example code.  You are able to modify quite a lot of how the app works and where it will deposit it's output. Below you will find the html you need if you just want to copy/paste to make it work.  More details about how to modify the jquery code can be found below.
 
 You will need to insert the following code snippet to make it work
-  <input type="button" value="Switch to other standards" id="switch">
-  <div id="output">Idle...</div>
-  <div id="results"></div>
-  <div id="googleMap" style="width:500px;height:380px;"></div>
+  < input type="button" value="Switch to other standards" id="switch">
+  < div id="output">Idle...</div>
+  < div id="results"></div>
+  < div id="googleMap" style="width:500px;height:380px;"></div>
 
 The first line is a button which enables users to switch between European and American standards.  For more on these read below.
 The first div with ID output is mainly to give some feedback to the user as the weather app is loading.
