@@ -111,7 +111,36 @@ Important: the GetWeather.js will not work unless you insert a key to the google
 
 Customizing GetWeather.js
 =========================
+When it comes to customization you will have to go into the code.  However, the code has been subdivided into a number of functions that make it easy and instinctive to replace what you want.  A quick overview:
+- start(): the intialisation function which also binds the click handler.
+- getLocation(): retrieves the location and passes it on to the usegooglemaps function and the getweather function.
+- useGoogleMaps(long, lat): displays the google map and centers it on the location of the visitor.
+- getWeather(long, lat): gets the XML with the weather forecast.
+- showError(): if getWeather fails, this function gets invoked.
+- doLocation(xml): if getWeather succeeds, this functions processes and displays the result.
 
 
 Customizing jQweather.js
 ========================
+You have 3 options to customize the experience of the plugin:
+1. pass an object literal with your overrides for the default options (see below when i discuss the default options)
+2. use the chainable .weather() method rather then the $.weather() method which does not chain.  Using the chainable method means you can specify on which DOM-element(s) you want to portray the weather forecast in without passing in an object literal as an option.  You still have that option if there are other things you wish to customize.
+3. alter the default object by directly overriding a default setting (either in script or in the plugin itself after downloading).  The various properties of the default object are as follows (in alphabetical order):
+ - button: default = 'switch'.  This property is the ID Of the button to change the format with.
+ - changeFormat: default = true.  This boolean value indicates whether or not you want to have a button to change the format with.
+ - clickHandler: The function used to bind a function (and the content of that function) to the click event for the button object.
+ - europeanValues: default = true.  Boolean indicating whether or not the european formatting should be used.
+ - getLocation: function getting the json-literal with the location of the current site visitor.
+ - getWeather: function processing the xml and outputting it as a weather forecast to the html.
+ - getXML: function to get the xml that represents the forecast (with a lot more data then that which is shown in the app)
+ - handleLocation: function which outputs the map into the html and passes the location on to the getXML function.
+ - locationProvider: the url we use for geolocation.  Default = 'http://freegeoip.net/json/'.
+ - mapdiv: default = 'googleMap'.  The ID of the html-container for the google map.
+ - mapVariables: an object literal containing all variables for the google map.  By default only contains 'zoom: 10'.
+ - noTimeChange: default = false.  Boolean indicating whether the time-format should change when the other values change from American to European and back.
+ - resultdiv: default = 'results'.  ID of the container where the forecast will be shown.
+ - setMap: default = true.  Boolean indicating whether a map oughta be shown or not.
+ - setMarker: default = true.  Boolean indicating whether the map should contain a marker or not.
+ - showError: function that gets called when getXML fails.  The default is an alert you might want to override.  Even if it nearly never gets called.
+ - timeFormat: default = true.  Boolean that is the counterpart of europeanValues and which indicates whether the time should be in American or European format.  The default of true indicates European format.
+ 
