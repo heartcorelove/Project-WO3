@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta lang="en">
+    <title>Weather Forecast!</title>
+    <link href="style/basic.css" rel="stylesheet">
+    <script src="lib/jquery-1.10.2.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+    <script src="lib/jQweather.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#googleMap').weather({ mapVariables: { zoom: 16 }} );
+        });
+    </script>
+</head>
+
+<body>
+
+<input type="button" value="Switch to other standards" id="switch">
+<div id="output">Idle...</div>
+
+<div id="results"></div>
+
+<div id="googleMap" style="width:500px;height:380px;"></div>
+
+</body>
+</html>
