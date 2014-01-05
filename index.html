@@ -10,39 +10,7 @@
     <script src="lib/GetWeather.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
     <script>
-        var center;
-        
         $(document).ready(start);
-        
-        function start() {            
-            $("#googleMap").hide();
-            getLocation();
-            $("#switch").bind("click", function (){
-                getLocation();
-            });
-        }
-        
-        function getLocation(){
-            $.getJSON("http://freegeoip.net/json/", function(location){
-                    useGoogleMaps(location.longitude, location.latitude)
-                    getWeather(location.longitude, location.latitude)
-                })
-        }
-        
-        function useGoogleMaps(long, lat) {
-            var mapProp = {
-                center:new google.maps.LatLng(lat,long),
-                zoom:10,
-                mapTypeId:google.maps.MapTypeId.ROADMAP
-            };
-            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-            
-            var marker=new google.maps.Marker({
-                position:new google.maps.LatLng(long, lat),
-            });
-            
-            marker.setMap(map);
-        }
     </script>
     
 </head>
