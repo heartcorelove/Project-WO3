@@ -57,7 +57,7 @@ Note that the first script tag loads the minified jquery file, you can of course
 The second script tag is to ensure the script can gather data from google maps.  You'll notice that the url for this bit: 'INSERTYOURKEYHERE'.  The idea is that you replace this with your key for the google maps api.  Obtaining one is a simple process that is expertly documented at this link: https://developers.google.com/maps/documentation/javascript/tutorial#api_key
 The third script tag is the script itself.
 
-Note that you will need to add a line invoking the code as well, but given the nature of the plugin you will need to make your own choices regarding what options you'd like.  Example code is available in the /example folder.
+Note that you will need to add a line invoking the code as well, but given the nature of the plugin you will need to make your own choices regarding what options you'd like.  Example code is available in the plugin.html file.
 
 
 jQweather.js. necessary HTML tags
